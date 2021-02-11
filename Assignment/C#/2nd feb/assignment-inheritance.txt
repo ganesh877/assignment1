@@ -1,0 +1,73 @@
+ public class member
+    {
+       public string name, address;
+      public  int age, salary;
+        public long phone_number;
+
+        public void printsalary()
+        {
+            Console.WriteLine("salary is" + salary);
+        }
+    }
+    public class employee : member
+    {
+        string specialization = "CSE", department = "CSE";
+       public  void displayDetails()
+        {
+            Console.WriteLine("The name of the employee is "+name);
+            Console.WriteLine("The age of the employee is " + age);
+            Console.WriteLine("The phone number of the employee is " + phone_number);
+            base.printsalary();
+            Console.WriteLine("The specialication of employee is :" + specialization);
+            Console.WriteLine("The department of employee is: " + department);
+        }
+
+    }
+
+    public class manager : member
+    {
+        string specialization = "MBA", department = "Executive";
+        public void displayDetails()
+        {
+            Console.WriteLine("The name of the manager is " + name);
+            Console.WriteLine("The age of the manager is " + age);
+            Console.WriteLine("The phone number of the manager is " + phone_number);
+            base.printsalary();
+            Console.WriteLine("The specialication of manager is: " + specialization);
+            Console.WriteLine("The department of manager is: " + department);
+
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        { 
+            employee e = new employee();
+            Console.WriteLine("Name of the emp");
+            e.name = Console.ReadLine();
+            Console.WriteLine("Address of the emp");
+            e.address = Console.ReadLine();
+            Console.WriteLine("age number of the emp");
+            e.age= int.Parse(Console.ReadLine());
+            Console.WriteLine("Phone number of the emp");
+            e.phone_number = long.Parse(Console.ReadLine());
+            Console.WriteLine("salary number of the emp");
+            e.salary= int.Parse(Console.ReadLine());
+            e.displayDetails();
+
+            manager m = new manager();
+            Console.WriteLine("Name of the man");
+            m.name = Console.ReadLine();
+            Console.WriteLine("Address of the man");
+            m.address = Console.ReadLine();
+            Console.WriteLine("age number of the man");
+            m.age = int.Parse(Console.ReadLine());
+            Console.WriteLine("Phone number of the man");
+            m.phone_number = long.Parse(Console.ReadLine());
+            Console.WriteLine("salary number of the man");
+            m.salary = int.Parse(Console.ReadLine());
+            m.displayDetails();
+        }
+
+    }
