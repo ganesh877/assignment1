@@ -1,0 +1,65 @@
+CLASSES & OBJECTS
+
+class square
+    {
+        public int sq()
+        {
+            int area;
+            Console.Write("Enter side of square  = ");
+            int a = int.Parse(Console.ReadLine());
+            return  area = a * a;
+           
+        }
+    }
+
+    class triangle
+    {
+        public void tri(double b,double h)
+        {
+            
+           
+            double triangle = (b * h) / 2;
+            Console.WriteLine("Area of triangle is: " + triangle);
+        }
+    }
+
+    class rectangle
+    {
+
+        public void rect()
+        {
+           
+            Console.WriteLine("Enter length of rectangle : ");
+            double length = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter breadth of rectangle : ");
+            double breadth = double.Parse(Console.ReadLine());
+            double area = length * breadth;
+            Console.WriteLine("Area of rectangle: " + area);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             square s = new square();
+            int area= s.sq();
+
+             Console.WriteLine("Area of square is = "+area);
+
+             Console.WriteLine("Enter the base of triangle:");
+             double b = double.Parse(Console.ReadLine());
+             Console.WriteLine("Enter the height of triangle:");
+             double h = double.Parse(Console.ReadLine());
+             triangle t = new triangle();
+             t.tri(b,h);
+
+             rectangle r = new rectangle();
+             r.rect();
+
+
+            
+           
+        }
+    
+}

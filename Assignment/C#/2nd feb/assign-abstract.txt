@@ -1,0 +1,173 @@
+1. We have to calculate the percentage of marks obtained in three 
+subjects (each out of 100) by student A and in four subjects (each out of 100)
+ by student B. Create an abstract class 'Marks' with an abstract method 'getPercentage'. 
+It is inherited by two other classes 'A' and 'B' each having a method with the same name 
+which returns the percentage of the students. The constructor of student A takes the marks 
+in three subjects as its parameters and the marks in four subjects as its parameters for student B. 
+Create an object for eac of the two classes and print the percentage of marks for both the students.
+
+
+abstract class marks
+    {
+        public abstract float getPercentage();  
+    }
+    class A : marks 
+    {
+        float a1, a2, a3;
+        public A(float a1, float a2, float a3)
+        {
+            this.a1 = a1;
+             this.a2 = a2;
+            this.a3 = a3;
+        }
+        public override float getPercentage()
+        {
+            return ((a1+a2+a3)/300)*100;
+        }
+
+    }
+
+    class B : marks
+    {
+        float b1, b2, b3,b4;
+        public B(float b1, float b2, float b3, float b4)
+        {
+            this.b1 = b1;
+            this.b2 = b2;
+            this.b3 = b3;
+            this.b4 = b4;
+        }
+        public override float getPercentage()
+        {
+            return ((b1 + b2 + b3 +b4) / 400)*100;
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float a1, a2, a3;
+            Console.WriteLine("Enter marks for sub1");
+           a1=float.Parse( Console.ReadLine());
+            Console.WriteLine("Enter marks for sub2");
+            a2 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Enter marks for sub3");
+            a3 = float.Parse(Console.ReadLine());
+            A a = new A(a1,a2,a3);
+            Console.WriteLine("Total Marks "+a.getPercentage());
+
+            float b1, b2, b3,b4;
+            Console.WriteLine("Enter marks for sub1");
+            b1 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Enter marks for sub2");
+            b2 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Enter marks for sub3");
+            b3 = float.Parse(Console.ReadLine());
+            Console.WriteLine("Enter marks for sub4");
+            b4 = float.Parse(Console.ReadLine());
+            B b = new B(b1, b2, b3,b4);
+            Console.WriteLine("Total Marks " + b.getPercentage());
+
+        }
+
+
+
+2. An abstract class has a construtor which prints "This is constructor of abstract class", an abstract 
+method named 'a_method' and a non-abstract method which prints "This is a normal method of abstract class".
+ A class 'SubClass' inherits the abstract class and has a method named 'a_method' which prints "This is abstract method".
+ Now create an object of 'SubClass' and call the abstract method and the non-abstract method. (Analyse the result)
+
+ public abstract class parent
+    {
+        public parent()
+        {
+            Console.WriteLine("this is constructor of abstract class");
+        }
+
+        public abstract void a_method();
+
+        public void normal()
+        {
+            Console.Write("normal method of abstract class");
+        }
+
+    }
+    public class subclass : parent
+    {
+        public override void a_method()
+        {
+            Console.WriteLine("this is abstract method");
+
+        }
+    }
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            subclass s = new subclass();
+            s.a_method();
+            s.normal();
+
+        }
+
+    }
+
+
+3.Create an abstract class 'Animals' with two abstract methods 'cats' and 'dogs'. 
+Now create a class 'Cats' with a method 'cats' which prints "Cats meow" and a class 'Dogs' with a method 'dogs' 
+which prints "Dogs bark", both inheriting the class 'Animals'. Now create an object for each of the subclasses and call their respective methods.
+public abstract class animal
+    {
+        
+
+        public abstract void cat();
+
+        public abstract void dog();
+      
+
+    }
+    public class cats : animal
+    {
+        public override void cat()
+        {
+            Console.WriteLine("cat: meow");
+
+        }
+        public override void dog()
+        {
+          
+
+        }
+
+    }
+    public class dogs : animal
+    {
+        public override void cat()
+        {
+           
+        }
+        public override void dog()
+        {
+            Console.WriteLine("dog: Barks");
+
+
+        }
+
+    }
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            cats c = new cats();
+            c.cat();
+            dogs d = new dogs();
+            d.cat();
+                d.dog();
+
+        }
+
+    } 
